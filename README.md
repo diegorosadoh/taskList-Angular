@@ -1,27 +1,36 @@
-# TaskListAng
+# Task List
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.1.
+Aplicación web que permite guardar y mostrar un listado de tareas o recordatorios. Se pueden añadir nuevas tareas, marcarlas como completadas, cambiar su prioridad y eliminarlas, así como filtrarlas mediante un campo de búsqueda.
+Este proyecto ha sido desarrollado con Angular, diviéndolo en componentes para facilitar el reciclaje de código. Las funcionalidades de Angular permiten insertar nuevas tareas, disponerlas en una lista y editarlas dinámicamente.
 
-## Development server
+EN PRODUCCIÓN: https://diegorosadoh.github.io/taskList-Angular/
+<hr>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Añadir tarea
+En el primer campo de texto señalado con "New task" se debe introducir un nombre para la nueva tarea. Al pulsar la tecla 'enter' se añadirá a la lista de tareas. En el caso de existir ya una lista en el almacenamiento local del navegador, la vista cargará y añadirá las nuevas tareas a esta lista. En caso de pulsar 'enter' con el campo de texto vacío, el texto indicativo del campo cambiará para avisar que se debe introducir algo para añadir una tarea.
+<hr>
 
-## Code scaffolding
+## Editar cada elemento
+Al poner el ratón encima de cada elemento aparecen nuevos elementos. Se muestran los minutos que han pasado desde que se creó el elemento, así como botones que, junto con hacer click sobre el elemento, permiten editar sus atributos:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+#### Completar tarea
+Al hacer click sobre un elemento de la lista, este se marcará como completado. El icono delante del nombre cambiará, y este último aparecerá grisáceo y tachado. Volviendo a hacer click se puede desmarcar el elemento.
 
-## Build
+#### Eliminar tarea
+Al poner el ratón encima aparece una 'X' al final del elemento. Haciendo click sobre ella el elemento desaparecerá.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+#### Prioridad
+Las flechas que aparecen delante del elemento al poner el ratón encima servirán para cambiar su prioridad (Baja, Media, Alta). La lista se ordenará según este atributo. Los elementos nuevos de la lista se crean con prioridad Baja.
+<hr>
 
-## Running unit tests
+## Filtrar lista
+El menú que aparece en la parte inferior de la lista ofrece información como el total de tareas de la lista, el número de restantes y el tipo de tareas que se están mostrando. A través de este menú podemos filtrar los elementos que queremos mostrar, así como eliminar las tareas ya completadas.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+#### Según estado
+Con los tres botones centrales, 'All', 'Active', 'Completed', se cambia la vista para mostrar todas las tareas, solo las no completadas o solo las completadas, respectivamnte.
 
-## Running end-to-end tests
+#### Según búsqueda
+En el campo de texto inferior indicado como 'Search' se puede introducir una cadena de búsqueda que filtrará los elementos según su nombre coincida con esta. Se puede aplicar este filtro al mismo tiempo que se usa el filtro de estado.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+#### Eliminar completadas
+Con el botón 'Clear Completed' dispuesto a la derecha del menú se eliminarán todas las tareas de la lista (no de la vista) marcadas como completadas.
