@@ -1,0 +1,31 @@
+<ul>
+    <li class="item"
+      *ngFor="let item of data.view()"
+      (click)="checktask(item.id)"
+      (mouseover)="clock(item.id)"
+      >
+        <div id="priority">
+          <img src="assets/prior-up.png"
+          (click)="priority(item.id,'up',$event)">
+          <img src="assets/prior-down.png"
+          (click)="priority(item.id,'down',$event)">
+        </div> 
+
+        <img src="assets/icon-complete.png" 
+        *ngIf="item.state" 
+        > 
+        <img #iconactive src="assets/icon-active.png" 
+        *ngIf="!item.state" 
+        >
+
+        <div
+        [ngClass]="{'complete' : item.state}">
+          {{item.text}}
+          <div id="minutes">&nbsp; {{item.minutes}} minutes ago</div>
+        </div>
+
+        <img id="close" src="assets/close.png"
+          (click)="deltask(item.id,$event)"
+        >
+    </li>
+</ul>

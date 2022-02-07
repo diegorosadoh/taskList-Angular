@@ -1,0 +1,37 @@
+<p id="selector">
+    <span id="cont">{{data.tasks.length}} items, {{data.active()}} left</span>
+
+    <span id="filter">
+        <span 
+            [ngClass]="{'filter_active' : data.view_state=='all'}"
+            (click)="data.filter('all')"
+        >
+        All
+        </span>
+
+        <span 
+            [ngClass]="{'filter_active' : data.view_state=='active'}"
+            (click)="data.filter('active')"
+        >
+        Active
+        </span>
+
+        <span 
+            [ngClass]="{'filter_active' : data.view_state=='completed'}"
+            (click)="data.filter('completed')"
+        >
+        Completed
+        </span>
+    </span>
+
+    <span id="clear"
+        (click)="clean()"
+    >
+    Clear Completed
+    </span>
+</p>
+
+<input id="search" type="text" placeholder="Search"
+  [(ngModel)]="regex"
+  (input)="search()"
+>

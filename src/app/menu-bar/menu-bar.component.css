@@ -1,0 +1,47 @@
+#selector{
+    margin:0;
+    margin-top:auto;
+    display:flex;
+    justify-content: space-around;
+    
+    color:var(--primary_mod);
+    padding:20px 0;
+  }
+
+  #filter,#clear{
+      cursor:pointer;
+  }
+
+  #clear:hover{
+      color:var(--secondary_mod)
+  }
+
+  #filter span:not(.filter_active):hover{
+      color:black;
+  }
+
+  .filter_active{
+      color: var(--secondary);
+  }
+
+  #clear,#cont{
+      font-weight: 300;
+      font-size: 0.8em;
+  }
+
+  #filter>span{
+      font-weight: 500;
+      margin: 0 10px;
+  }
+  
+  #search{
+    width:100%;
+    border:none;
+    outline:none;
+    box-shadow: none;
+    padding:20px;
+    font-size: 1em;
+    text-align: center;
+    border-radius:20px;
+    box-sizing: border-box;
+  }
